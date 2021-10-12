@@ -47,33 +47,41 @@ escapeinside={\%*}{*)}      % если нужно добавить коммен�
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% КОМАНДЫ {Для соответствия ГОСТ}%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand\Section[1]{
-    \refstepcounter{section}
-    \section*{\raggedright
-        \arabic{chapter}.\arabic{section}. #1}
-    \addcontentsline{toc}{section}{%
-        \arabic{chapter}.\arabic{section}. #1}
-}
-
-\newcommand\Subsection[1]{
-    \refstepcounter{subsection}
-    \subsection*{\raggedright
-        \arabic{chapter}.\arabic{section}.\arabic{subsection}. #1}
-    \addcontentsline{toc}{subsection}{%
-        \arabic{chapter}.\arabic{section}.\arabic{subsection}. #1}
-}
-
 
 \newcommand\Chapter[1]{
     \refstepcounter{chapter}
     \chapter*{
         \begin{huge}
         \textbf{\chaptername\ \arabic{chapter}\\}
-        \end{huge}%
+        \end{huge}
         \bigskip \bigskip
         \raggedright #1}
-    \addcontentsline{toc}{chapter}{\arabic{chapter}. #1}
+        % Отключена нумерация для chapter в Оглавлении (Содержании):
+        %\addcontentsline{toc}{chapter}{\arabic{chapter}. #1}
+        \addcontentsline{toc}{chapter}{#1} }
+
+\newcommand\Section[1]{
+    \refstepcounter{section}
+    \section*{\raggedright
+    % Отключена дополнительная нумерация chapter в section в тексте документа:
+        %\arabic{chapter}.\arabic{section}. #1}
+        \arabic{section}. #1}
+    % Отключена дополнительная нумерация chapter в section в Оглавлении (Содержании):
+    %\addcontentsline{toc}{section}{\arabic{chapter}.\arabic{section}. #1}
+    \addcontentsline{toc}{section}{\arabic{section}. #1} }
+
+\newcommand\Subsection[1]{
+    \refstepcounter{subsection}
+    \subsection*{\raggedright
+        % Отключена дополнительная нумерация chapter в section в тексте документа (можно добавить отступ с помощью \hspace*{12pt}):
+        %\arabic{chapter}.\arabic{section}.\arabic{subsection}. #1}
+        \arabic{section}. \arabic{subsection}. #1}
+        % Отключена дополнительная нумерация chapter в section в Оглавлении (Содержании):
+        %\addcontentsline{toc}{subsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}. #1}
+        \addcontentsline{toc}{subsection}{\arabic{subsection}. #1}
 }
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%% КОМАНДЫ %%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -83,7 +91,7 @@ escapeinside={\%*}{*)}      % если нужно добавить коммен�
 %%%%%%%%%%%%%%%%%%%%%%%%%% ПЕРЕМЕННЫЕ {{{ %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand\student{Тюрин Иван Николаевич} % определение ФИО студента, выполнившего работу
 \newcommand\studygroup{P3110} % определение учебной группы студента, выполнившего работу
-\newcommand\variant{№ 335047}
+\newcommand\variant{№ 54}
 \newcommand\subject{Информатика}
 \newcommand\teacher{Балакшин П. В.,\\
                     Рудникова Т. В.}
@@ -148,23 +156,26 @@ escapeinside={\%*}{*)}      % если нужно добавить коммен�
 \tableofcontents
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%% ХОД РАБОТЫ {{{ %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% КОД РАБОТЫ %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \Chapter{\labname}
-\Section{Задача варианта \variant}
+
+\Section{Задание варианта \variant}
 
 \Section{Ход работы}
+    \Subsection{Задание №1}
+    \Subsection{Задание №2}
+    \Subsection{Задание №3}
+    \Subsection{Задание №4}
+    \Subsection{Задание №5}
+    \Subsection{Задание №6}
+
+
+\Section{Вывод}
 
 
 
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%% }}} ХОД РАБОТЫ %%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\Section{Список литературы}
 %%%%%%%%%%%%%%%%%%%% СПИСОК ЛИТЕРАТУРЫ {{{ %%%%%%%%%%%%%%%%%%%%%
 % Для отчёта он не обязателен
 
