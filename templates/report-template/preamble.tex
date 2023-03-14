@@ -96,6 +96,31 @@ breaklines=true,            % автоматически переносить с
 breakatwhitespace=false,    % переносить строки только если есть пробел
 escapeinside={\%*}{*)}      % если нужно добавить комментарии в коде
 }
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
 %<<<<< Использование листингов
 
 
@@ -113,27 +138,39 @@ escapeinside={\%*}{*)}      % если нужно добавить коммен�
 \newcommand{\De}{\Delta}
 \newcommand{\cd}{\cdot}
 \newcommand{\df}{\partial}
-% \newcommand{\note}[2]{\overbrace{#1}^{#2}} % скобка сверху для комментария
 \newcommand{\ndash}{\textendash}
 \newcommand{\mdash}{\textemdash}
+
+%>>>>> Аннотирование
+\newcommand{\note}[2]{\overbrace{#1}^{#2}}% скобка сверху для комментария
+% \overset{}{}% для указания символа над другим смиволом
+% \underset{}{}% для указания символа под другим смиволом
+%<<<<< Аннотирование
+
+%>>>>>> Матрицы
+\DeclareMathOperator{\rank}{rank}
+\newcommand{\tvec}[1]{\mathbfit{#1}}% "text vector"
+\newcommand{\mtx}[1]{\mathrm{#1}}
+\newcommand{\transposed}[1]{{#1}^{\mathrm{T}}}
+%>>>>>> Матрицы
 
 %>>>>> Скобки
 \newcommand{\lt}{\left}
 \newcommand{\rt}{\right}
 \newcommand{\la}{\langle}% '<'
 \newcommand{\ra}{\rangle}% '>'
-\newcommand{\avg}[1]{\langle #1\rangle}% '<X>'
+\newcommand{\avg}[1]{\langle{#1}\rangle}% '<X>'
 %<<<<< Скобки
 
 %>>>>> Дроби
-\newcommand{\cf}{\cfrac}
-\newcommand{\fr}{\frac}
+\newcommand{\cf}[2]{\cfrac{#1}{#2}}
+\newcommand{\fr}[2]{\frac{#1}{#2}}
 %<<<<< Дроби
 
 
 %>>>>> Стрелки
-\newcommand{\Rarr}{\Rightarrow}% ⇒ следствие
-\newcommand{\LRarr}{\Leftrightarrow}% равносильно
+\newcommand{\Rarr}{\Rightarrow}% ⇒ следствие | лучше использовать \implies
+\newcommand{\LRarr}{\Leftrightarrow}% равносильно | лучше  использовать \iff
 \newcommand{\rarr}{\xrightarrow{}}% → стрелка вправо
 \newcommand{\nwarr}{\nwarrow}% ↖ север-запад стрелка
 \newcommand{\nearr}{\nearrow}% ↗ север-восток стрелка
@@ -147,13 +184,13 @@ escapeinside={\%*}{*)}      % если нужно добавить коммен�
 
 %{{{
 \makeatletter
-\newcommand{\xLeftrightarrow}[2][]{\ext@arrow 0359\Leftrightarrowfill@{#1}{#2}}% следствие с надписью
+\newcommand{\impliesby}[2][]{\ext@arrow 0359\Leftrightarrowfill@{#1}{#2}}% следствие с надписью
 \makeatother
 %}}}
 
 %{{{
 \makeatletter
-\newcommand{\xRightarrow}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}% равносильность с надписью
+\newcommand{\iffby}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}% равносильность с надписью
 \makeatother
 %}}}
 %<<<<< Стрелки
