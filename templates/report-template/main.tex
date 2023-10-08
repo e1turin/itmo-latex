@@ -94,12 +94,14 @@
 Листинг из файла \ref{lst:biblist}
 \lstinputlisting[caption={Список источников},label={lst:biblist}]{./biblist.tex}
 
-Листинг прямо в тексте \ref{lst:sql}
+Листинг в код latex \ref{lst:sql}
 \begin{lstlisting}[caption={SQL},label={lst:sql}]
 declare @t table(
   id int
 )
 \end{lstlisting}
+
+Листинг прямо в текст: \lstinline[columns=fixed]{declare}. Либо еще так: \verb|declare|.
 
 Вставленное изображение с описанием и шириной по тексту.
 \begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
@@ -114,7 +116,9 @@ declare @t table(
 
 \Section{Вывод}
 % Вывод... 
-Ссылка \cite{itmocompmath} % -- из biblist
+Ссылка на источники \cite{itmocompmath}.
+% -- из biblist
+Прямая ссылка на интернет-ресурт: \href{https://http.cat/501}{http.cat}
 \newpage
 %<<<<<<<<<<<<<<<<<<<<<< КОД РАБОТЫ <<<<<<<<<<<<<<<<<<<<<<<<
 
