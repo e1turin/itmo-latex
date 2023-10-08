@@ -18,8 +18,10 @@
 
 \newcommand{\student}{Тюрин Иван Николаевич}    % определение ФИО студента
 \newcommand{\studygroup}{P3110}                 % определение учебной группы 
-\newcommand{\teacher}{Письмак А. Е.,\\[1mm]     % ФИО лектора
-                        Сорокин Р. Б.}          % ФИО практика
+\newcommand{\teacher}{% принимающий
+    Письмак А. Е.,\\[1mm]% ФИО лектора
+    Сорокин Р. Б.% ФИО практика
+}
 %<<<<<<<<<<<<<<<<<<<<<<<<<< ПЕРЕМЕННЫЕ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -61,9 +63,8 @@
 \Chapter{\lab\ \labnumber}{\labtheme}{}
 
 \Section{Задание варианта \variant}
-\begin{center}
-, , ,
-\end{center}
+
+\begin{center} , , , \end{center}
 \noindent
 \textbf{
    % Заглавное описание....:
@@ -83,19 +84,37 @@
     \item 2
 \end{itemize}
 
-\begin{center}
-    ' ' '
-\end{center}
+\begin{center} ' ' ' \end{center}
 
 \newpage
 \Section{Выполнение задания}
-Листинг
+Что-то про задание
+
+\Subsection{Листинги кода}
+Листинг из файла \ref{lst:biblist}
 \lstinputlisting[caption={Список источников},label={lst:biblist}]{./biblist.tex}
+
+Листинг прямо в тексте \ref{lst:sql}
+\begin{lstlisting}[caption={SQL},label={lst:sql}]
+declare @t table(
+  id int
+)
+\end{lstlisting}
+
+Вставленное изображение с описанием и шириной по тексту.
+\begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
+    \centering
+    \includegraphics[width=\textwidth]{res/UML-class-diagram.png}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
 
 % Выполнение задания...
 
 \Section{Вывод}
-% Вывод...
+% Вывод... 
+Ссылка \cite{itmocompmath} % -- из biblist
 \newpage
 %<<<<<<<<<<<<<<<<<<<<<< КОД РАБОТЫ <<<<<<<<<<<<<<<<<<<<<<<<
 
